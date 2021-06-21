@@ -1,0 +1,4 @@
+#Format import data pelanggan ke blesta dengan plugin Import Manager
+first_name,last_name,email,address,city,state_code,postal_code,country_code,phone,company
+Ali,Musthofa,demo01@gmail.id,Wedoroanom,Gresik,Indonesia,61177,ID,085645473999,Personal
+Ahmad,Mutawakkil,demo02@gmail.id,Bangsri,Sidoarjo,Indonesia,61258,ID,085645473999,Personal
