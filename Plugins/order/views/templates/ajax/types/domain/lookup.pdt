@@ -1,9 +1,12 @@
-                    <div class="section-title row">
-                        <div class="col-md-10">
-                            <h3><i class="fas fa-search"></i> <?php $this->_('Domain.lookup.title');?></h3>
-                            <p><?php $this->_('Domain.lookup.description');?></p>
-                        </div>
-                        <div class="col-md-2">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-head d-flex justify-content-between">
+                            <div class="card-title">
+                                <h3 class="fw-bold mb-1"><i class="fas fa-search"></i> <?php $this->_('Domain.lookup.title');?></h3>
+                                <small class="text-muted d-none d-sm-block"><?php $this->_('Domain.lookup.description');?></small>
+                            </div>
+                            <div class="card-tools justify-content-end">
                             <?php
                             if (count((isset($order_form->currencies) ? $order_form->currencies : [])) > 1) {
                             ?>
@@ -35,82 +38,78 @@
                             <?php
                             }
                             ?>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 whois">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-
-                                <?php
-                                $this->Form->create(null, ['class' => 'disable-on-submit']);
-                                ?>
-                                    <div class="card bg-light p-3 card-order">
-                                        <div class="form-group">
-                                            <?php
-                                            $this->Form->fieldText('domain', (isset($vars->domain) ? $vars->domain : null), ['placeholder' => $this->_('Domain.lookup.domain_placeholder', true), 'class' => 'form-control input-md']);
-                                            ?>
-                                        </div>
-                                        <div class="form-group tlds">
-                                            <?php
-                                            if (!empty($spotlight_tlds)) {
-                                                foreach ($spotlight_tlds as $spotlight_tld => $true) {
-                                                    if (array_key_exists($spotlight_tld, $tlds)) {
-                                                        unset($tlds[$spotlight_tld]);
-                                            ?>
-                                                <label class="checkbox-inline spotlight_tld">
-                                                    <?php
-                                                    $this->Form->fieldCheckbox('tlds[]', $spotlight_tld, in_array($spotlight_tld, (isset($vars->tlds) ? $vars->tlds : [])));
-                                                    ?>
-                                                    <?php echo (isset($spotlight_tld) ? $this->Html->safe($spotlight_tld) : null);?>
-                                                </label>
-                                            <?php
-                                                    }
-                                                }
-                                            }
-                                            $hidden_tlds = false;
-                                            foreach ($tlds as $tld => $pack) {
-                                                $hide_tld = false;
-                                                if (!empty($spotlight_tlds) && !in_array($tld, (isset($vars->tlds) ? $vars->tlds : []))) {
-                                                    $hide_tld = true;
-                                                    $hidden_tlds = true;
-                                                }
-                                            ?>
-                                                <label class="checkbox-inline normal_tld<?php echo ($hide_tld ? '" style="display:none;' : '');?>">
-                                                    <?php
-                                                    $this->Form->fieldCheckbox('tlds[]', $tld, in_array($tld, (isset($vars->tlds) ? $vars->tlds : [])));
-                                                    ?>
-                                                    <?php echo (isset($tld) ? $this->Html->safe($tld) : null);?>
-                                                </label>
-                                            <?php
-                                            }
-
-                                            if ($hidden_tlds) {
-                                            ?>
-                                            <a class="show_more btn btn-secondary btn-xs"><?php $this->_('Domain.lookup.show_all');?></a>
-                                            <?php
-                                            }
-                                            ?>
-                                        </div>
-                                    </div>
-                                    <div class="search">
-                                        <div class="btn-group btn-toolbar bg-warning-gradient">
-                                            <button class="btn" type="submit" name="lookup" value="1">
-                                                <i class="fas fa-search"></i> <?php $this->_('Domain.lookup.lookup_btn');?>
-                                            </button>
-                                            <button class="btn" type="submit" name="transfer" value="1">
-                                                <i class="fas fa-sign-in-alt"></i> <?php $this->_('Domain.lookup.transfer_btn');?>
-                                            </button>
-                                            <a href="<?php echo $this->Html->safe($this->base_uri . 'order/main/index/' . (isset($order_form->label) ? $order_form->label : null) . '/?skip=true');?>" class="btn"><i class="fas fa-hand-point-right"></i> <?php $this->_('Domain.lookup.other_btn');?></a>
-                                        </div>
-                                    </div>
-                                <?php
-                                $this->Form->end();
-                                ?>
                             </div>
-                        </div>
                     </div>
+                    <div class="card-body whois">
+                        <?php
+                        $this->Form->create(null, ['class' => 'disable-on-submit']);
+                        ?>
+                            <div class="card bg-light p-3 card-order">
+                                <div class="form-group">
+                                    <?php
+                                    $this->Form->fieldText('domain', (isset($vars->domain) ? $vars->domain : null), ['placeholder' => $this->_('Domain.lookup.domain_placeholder', true), 'class' => 'form-control input-md']);
+                                    ?>
+                                </div>
+                                <div class="form-group tlds">
+                                    <?php
+                                    if (!empty($spotlight_tlds)) {
+                                        foreach ($spotlight_tlds as $spotlight_tld => $true) {
+                                            if (array_key_exists($spotlight_tld, $tlds)) {
+                                                unset($tlds[$spotlight_tld]);
+                                    ?>
+                                        <label class="checkbox-inline spotlight_tld">
+                                            <?php
+                                            $this->Form->fieldCheckbox('tlds[]', $spotlight_tld, in_array($spotlight_tld, (isset($vars->tlds) ? $vars->tlds : [])));
+                                            ?>
+                                            <?php echo (isset($spotlight_tld) ? $this->Html->safe($spotlight_tld) : null);?>
+                                        </label>
+                                    <?php
+                                            }
+                                        }
+                                    }
+                                    $hidden_tlds = false;
+                                    foreach ($tlds as $tld => $pack) {
+                                        $hide_tld = false;
+                                        if (!empty($spotlight_tlds) && !in_array($tld, (isset($vars->tlds) ? $vars->tlds : []))) {
+                                            $hide_tld = true;
+                                            $hidden_tlds = true;
+                                        }
+                                    ?>
+                                        <label class="checkbox-inline normal_tld<?php echo ($hide_tld ? '" style="display:none;' : '');?>">
+                                            <?php
+                                            $this->Form->fieldCheckbox('tlds[]', $tld, in_array($tld, (isset($vars->tlds) ? $vars->tlds : [])));
+                                            ?>
+                                            <?php echo (isset($tld) ? $this->Html->safe($tld) : null);?>
+                                        </label>
+                                    <?php
+                                    }
 
+                                    if ($hidden_tlds) {
+                                    ?>
+                                    <a class="show_more btn btn-danger btn-xs text-white"><?php $this->_('Domain.lookup.show_all');?></a>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="search">
+                                <div class="btn-group btn-toolbar bg-warning-gradient">
+                                    <button class="btn rounded-0" type="submit" name="lookup" value="1">
+                                        <i class="fas fa-search"></i> <?php $this->_('Domain.lookup.lookup_btn');?>
+                                    </button>
+                                    <button class="btn rounded-0" type="submit" name="transfer" value="1">
+                                        <i class="fas fa-sign-in-alt"></i> <?php $this->_('Domain.lookup.transfer_btn');?>
+                                    </button>
+                                    <a href="<?php echo $this->Html->safe($this->base_uri . 'order/main/index/' . (isset($order_form->label) ? $order_form->label : null) . '/?skip=true');?>" class="btn rounded-0"><i class="fas fa-hand-point-right"></i> <?php $this->_('Domain.lookup.other_btn');?></a>
+                                </div>
+                            </div>
+                        <?php
+                        $this->Form->end();
+                        ?>
+                    </div>
+                </div>
+            </div>
+<!--/done-->
                     <?php
                     if ((isset($domains) ? $domains : null) && !empty($domains)) {
                         $this->Form->create($this->base_uri . 'order/config/index/' . $order_form->label, ['id' => 'configure_domain', 'class' => 'disable-on-submit']);
