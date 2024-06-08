@@ -59,14 +59,14 @@
                                                 </div>
                                             </div>
                                             <div class="search">
-                                                <div class="btn-group">
-                                                    <button class="btn btn-success" type="submit" name="lookup" value="1">
+                                                <div class="btn-group btn-toolbar bg-warning-gradient">
+                                                    <button class="btn" type="submit" name="lookup" value="1">
                                                         <i class="fas fa-search"></i> <?php $this->_('Domain.lookup.lookup_btn');?>
                                                     </button>
-                                                    <button class="btn btn-light" type="submit" name="transfer" value="1">
+                                                    <button class="btn" type="submit" name="transfer" value="1">
                                                         <i class="fas fa-sign-in-alt"></i> <?php $this->_('Domain.lookup.transfer_btn');?>
                                                     </button>
-                                                    <a href="<?php echo $this->Html->safe($this->base_uri . 'order/main/index/' . (isset($order_form->label) ? $order_form->label : null) . '/?skip=true');?>" class="btn btn-light"><i class="fas fa-hand-point-right"></i> <?php $this->_('Domain.lookup.other_btn');?></a>
+                                                    <a href="<?php echo $this->Html->safe($this->base_uri . 'order/main/index/' . (isset($order_form->label) ? $order_form->label : null) . '/?skip=true');?>" class="btn"><i class="fas fa-hand-point-right"></i> <?php $this->_('Domain.lookup.other_btn');?></a>
                                                 </div>
                                             </div>
                                         <?php
