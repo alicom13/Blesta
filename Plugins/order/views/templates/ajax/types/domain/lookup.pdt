@@ -141,7 +141,7 @@
                         ?>
                         <div class="card bg-light p-3 card-order domains">
                             <div class="table-responsive">
-                                <table class="table table-curved">
+                                <table class="table table-fit table-curved">
                                     <thead>
                                         <tr>
                                             <th>
@@ -149,7 +149,7 @@
                                             </th>
                                             <th><?php $this->_('Domain.lookup.domains_domain_name');?></th>
                                             <th><?php $this->_('Domain.lookup.domains_status');?></th>
-                                            <th><?php $this->_('Domain.lookup.domains_term');?></th>
+                                            <th class="w-auto"><?php $this->_('Domain.lookup.domains_term');?></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -210,7 +210,7 @@
                                                     }
                                                 }
 
-                                                $attr = ['class' => 'form-control input-sm'];
+                                                $attr = ['class' => 'form-control input-sm p-0 w-auto'];
                                                 if (!$allow) {
                                                     $attr['disabled'] = 'disabled';
                                                 }
@@ -234,7 +234,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-lg btn-success float-right">
+                        <button type="submit" class="btn bg-warning-gradient float-right">
                             <?php $this->_('Domain.lookup.order_btn');?> <i class="fas fa-angle-double-right"></i>
                         </button>
                         <div class="clearfix"></div>
