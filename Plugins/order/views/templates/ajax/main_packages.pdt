@@ -111,22 +111,22 @@
                                             if ($sold_out) {
                                             ?>
                                             <div class="order sold-btn">
-                                                <div disabled="disabled" class="btn btn-danger btn-lg float-right"><?php $this->_('Main.packages.box_sold_out');?></div>
+                                                <div disabled="disabled" class="btn btn-danger float-right"><?php $this->_('Main.packages.box_sold_out');?></div>
                                             </div>
                                             <?php
                                             } elseif ($limit_reached) {
                                             ?>
                                             <div class="order sold-btn">
-                                                <div disabled="disabled" class="btn btn-danger btn-lg float-right"><?php $this->_('Main.packages.box_client_limit');?></div>
+                                                <div disabled="disabled" class="btn btn-danger float-right"><?php $this->_('Main.packages.box_client_limit');?></div>
                                             </div>
                                             <?php
                                             } else {
                                             ?>
                                             <div class="order selected-btn">
-                                                <button type="button" class="btn btn-success btn-lg float-right"><?php $this->_('Main.packages.box_selected');?></button>
+                                                <button type="button" class="btn btn-success float-right"><?php $this->_('Main.packages.box_selected');?></button>
                                             </div>
                                             <div class="order unselected-btn">
-                                                <button type="button" class="btn btn-light btn-lg float-right"><?php $this->_('Main.packages.box_select');?></button>
+                                                <button type="button" class="btn btn-light float-right"><?php $this->_('Main.packages.box_select');?></button>
                                             </div>
                                             <?php
                                             }
@@ -198,8 +198,8 @@
                             }
                             ?>
 
-                                <div class="package-name card-header">
-                                    <h4><?php echo (isset($package->name) ? $this->Html->safe($package->name) : null);?></h4>
+                                <div class="package-name card-header bg-warning-gradient rounded-top">
+                                    <h4 class="text-uppercase"><?php echo (isset($package->name) ? $this->Html->safe($package->name) : null);?></h4>
                                 </div>
                                 <div class="price-box card-body">
                                     <p><?php $this->_('Main.packages.price_start');?></p>
@@ -215,22 +215,22 @@
                                 if ($sold_out) {
                                 ?>
                                 <div class="order sold-btn card-footer">
-                                    <div disabled="disabled" class="btn btn-danger btn-lg btn-block"><?php $this->_('Main.packages.box_sold_out');?></div>
+                                    <div disabled="disabled" class="btn btn-danger btn-block"><?php $this->_('Main.packages.box_sold_out');?></div>
                                 </div>
                                 <?php
                                 } elseif ($limit_reached) {
                                 ?>
                                 <div class="order sold-btn card-footer">
-                                    <div disabled="disabled" class="btn btn-danger btn-lg btn-block"><?php $this->_('Main.packages.box_client_limit');?></div>
+                                    <div disabled="disabled" class="btn btn-danger btn-block"><?php $this->_('Main.packages.box_client_limit');?></div>
                                 </div>
                                 <?php
                                 } else {
                                 ?>
                                 <div class="order selected-btn card-footer">
-                                    <button type="button" class="btn btn-success btn-lg btn-block"><?php $this->_('Main.packages.box_selected');?></button>
+                                    <button type="button" class="btn bg-warning-gradient btn-block"><?php $this->_('Main.packages.box_selected');?></button>
                                 </div>
                                 <div class="order unselected-btn card-footer">
-                                    <button type="button" class="btn btn-light btn-lg btn-block"><?php $this->_('Main.packages.box_select');?></button>
+                                    <button type="button" class="btn btn-light btn-block"><?php $this->_('Main.packages.box_select');?></button>
                                 </div>
                                 <?php
                                 }
@@ -328,7 +328,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="float-right">
-                                <a href="<?php echo $this->Html->safe($this->base_uri . 'order/cart/index/' . ($order_form->label ?? null));?>" class="btn btn-lg btn-secondary mb-2">
+                                <a href="<?php echo $this->Html->safe($this->base_uri . 'order/cart/index/' . ($order_form->label ?? null));?>" class="btn btn-secondary mb-2">
                                     <i class="fas fa-shopping-cart"></i> <?php $this->_('Main.packages.show_cart_btn');?>
                                 </a>
                                 <div class="clearfix"></div>
