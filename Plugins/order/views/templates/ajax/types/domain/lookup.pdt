@@ -1,4 +1,4 @@
-            <div class="col-md-12">
+            <div class="m-0">
                 <div class="card">
                     <div class="card-header">
                         <div class="card-head d-flex justify-content-between">
@@ -39,12 +39,13 @@
                             }
                             ?>
                             </div>
+                        </div>
                     </div>
                     <div class="card-body whois">
                         <?php
                         $this->Form->create(null, ['class' => 'disable-on-submit']);
                         ?>
-                            <div class="card bg-light p-3 card-order">
+                            <div class="card bg-light p-3 card-order g-0">
                                 <div class="form-group">
                                     <?php
                                     $this->Form->fieldText('domain', (isset($vars->domain) ? $vars->domain : null), ['placeholder' => $this->_('Domain.lookup.domain_placeholder', true), 'class' => 'form-control input-md']);
@@ -91,7 +92,7 @@
                                     }
                                     ?>
                                 </div>
-                            </div>
+                            
                             <div class="search">
                                 <div class="btn-group btn-toolbar bg-warning-gradient">
                                     <button class="btn rounded-0" type="submit" name="lookup" value="1">
