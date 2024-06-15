@@ -3,12 +3,12 @@
                     <div class="card-header">
                         <div class="card-title">
                             <h3><i class="fas fa-shopping-cart"></i> <?php $this->_('Summary.index.heading_summary');?></h3>
-                            <p><?php $this->_('Summary.index.summary_note');?></p>
+                            <p class="d-none d-sm-block"><?php $this->_('Summary.index.summary_note');?></p>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-curved">
+                            <table class="table-sm w-100 table-curved">
                                 <thead>
                                     <tr>
                                         <th><?php $this->_('Summary.index.table_description');?></th>
@@ -47,11 +47,11 @@
                                     ?>
                                 </tbody>
                             </table>
-                            <hr>
+                            
                             <?php
                             if ((isset($summary['totals']) ? $summary['totals'] : null)) {
                             ?>
-                            <table class="table table-curved">
+                            <table class="table-sm w-100 table-curved">
                                 <tbody>
                                     <tr>
                                         <td><?php $this->_('Summary.index.totals.subtotal');?></td>
