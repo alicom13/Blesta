@@ -1,5 +1,5 @@
-                <div class="col-md-12">
-                    <div class="card-head d-flex justify-content-between">
+                <div class="col-md-12 bg-white">
+                    <div class="card-head d-flex justify-content-between border-bottom">
                         <div class="card-title">
                             <h3 class="fw-bold mb-1">
                                 <?php echo (isset($package_group->name) ? $this->Html->safe($package_group->name) : null);?>
@@ -28,7 +28,9 @@
                                 $this->Form->fieldHidden('group_id', (isset($package_group->id) ? $package_group->id : null));
                                 ?>
                                     <label for="change_currency">
-                                        <?php $this->_('Main.index.field_currency');?>
+                                        <span class="d-none d-sm-block">
+                                            <?php $this->_('Main.index.field_currency');?>
+                                        </span>
                                     </label>
                                     <?php
                                     $this->Form->fieldSelect('currency', $this->Form->collapseObjectArray($order_form->currencies, 'currency', 'currency'), (isset($currency) ? $currency : null), ['class' => 'form-control input-sm', 'id' => 'change_currency']);
@@ -185,7 +187,7 @@
                                 $selected_pricing_id = $default_price->id;
                             }
                         ?>
-                        <div class="col-md-3 package-boxes">
+                        <div class="col-6 col-md-3 package-boxes">
                             <?php
                             // Prevent sold out packages from being submitted
                             if ($sold_out || $limit_reached) {
@@ -198,9 +200,9 @@
                             <?php
                             }
                             ?>
-
+<!--Paket-->
                                 <div class="package-name card-header bg-warning-gradient rounded-top">
-                                    <h4 class="text-uppercase"><?php echo (isset($package->name) ? $this->Html->safe($package->name) : null);?></h4>
+                                    <h4 class="text-uppercase text-white"><?php echo (isset($package->name) ? $this->Html->safe($package->name) : null);?></h4>
                                 </div>
                                 <div class="price-box card-body">
                                     <p><?php $this->_('Main.packages.price_start');?></p>
@@ -228,10 +230,10 @@
                                 } else {
                                 ?>
                                 <div class="order selected-btn card-footer">
-                                    <button type="button" class="btn bg-warning-gradient btn-block"><?php $this->_('Main.packages.box_selected');?></button>
+                                    <button type="button" class="btn btn-warning btn-block text-white"><?php $this->_('Main.packages.box_selected');?></button>
                                 </div>
                                 <div class="order unselected-btn card-footer">
-                                    <button type="button" class="btn btn-light btn-block"><?php $this->_('Main.packages.box_select');?></button>
+                                    <button type="button" class="btn bg-warning-gradient btn-block text-white"><?php $this->_('Main.packages.box_select');?></button>
                                 </div>
                                 <?php
                                 }
@@ -329,7 +331,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="float-right">
-                                <a href="<?php echo $this->Html->safe($this->base_uri . 'order/cart/index/' . ($order_form->label ?? null));?>" class="btn btn-secondary mb-2">
+                                <a href="<?php echo $this->Html->safe($this->base_uri . 'order/cart/index/' . ($order_form->label ?? null));?>" class="btn bg-warning-gradient mb-2 fw-bold text-white">
                                     <i class="fas fa-shopping-cart"></i> <?php $this->_('Main.packages.show_cart_btn');?>
                                 </a>
                                 <div class="clearfix"></div>

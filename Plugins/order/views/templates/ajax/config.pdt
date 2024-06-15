@@ -6,7 +6,7 @@
                 }
                 ?>
                     <div id="config_message"></div>
-                    <div class="section-title">
+                    <div class="section-title border-bottom">
                         <h3>
                             <i class="fas fa-cog"></i>
                             <?php
@@ -17,7 +17,7 @@
                             }
                             ?>
                         </h3>
-                        <p><?php $this->_('Config.index.config_notes');?></p>
+                        <p class="d-none d-sm-block"><?php $this->_('Config.index.config_notes');?></p>
                     </div>
                     <?php
                     // Display message if we are configuring a bundlable domain
