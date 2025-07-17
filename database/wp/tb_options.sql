@@ -50,7 +50,7 @@ INSERT INTO `tb_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (44, 'html_type', 'text/html', 'on'),
 (45, 'use_trackback', '0', 'on'),
 (46, 'default_role', 'subscriber', 'on'),
-(47, 'db_version', '58975', 'on'),
+(47, 'db_version', '60421', 'on'),
 (48, 'uploads_use_yearmonth_folders', '1', 'on'),
 (49, 'upload_path', '', 'on'),
 (50, 'blog_public', '1', 'on'),
